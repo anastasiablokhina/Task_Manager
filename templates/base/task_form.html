@@ -1,0 +1,18 @@
+{% extends 'base/base.html'  %}
+{% load static %}
+{% block content %}
+
+    <div class="header-bar">
+    <a href="{% url 'tasks' %}">
+        <img src="{% static 'base/img/back.png' %}" alt="Вернуться" style="width:45px">
+    </a>
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button" type="submit" value="Создать">
+        </form>
+    </div>
+{% endblock content %}
